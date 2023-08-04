@@ -31,16 +31,40 @@ main {
   padding: 20px;
 }
 
+
 .hero {
-  background-image: url("night_lateral.jpg");
+  /*background-image: url("images/hero.jpg");*/
   background-size: cover;
+  background-position: center;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #ff00005e;
+  /*color: #fff;*/
   text-align: center;
+}
+
+
+.image-gallery {
+  padding: 20px;
+}
+
+.image-gallery h2 {
+  text-align: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .description {
