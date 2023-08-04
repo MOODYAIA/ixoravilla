@@ -33,6 +33,37 @@ body {
       max-width: 100%;
       height: auto;
     }
+
+
+  /*--------------------------------------------------------*/
+/* Common styles */
+.container {
+  position: relative;
+  padding: 20px;
+  color: white;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .container {
+    background-image: url('desktop-shape.png');
+    background-position: top right;
+    background-size: 200px auto;
+    background-repeat: no-repeat;
+  }
+}
+
+/* Phone styles */
+@media (max-width: 767px) {
+  .container {
+    background-image: url('phone-shape.png');
+    background-position: bottom left;
+    background-size: auto 100px;
+    background-repeat: no-repeat;
+  }
+}
+
+  /*________________________________________________________*/
   
 
 
