@@ -35,13 +35,10 @@ body {
     
 
     #card{
-      padding: 20px;
-      float: right;
+      padding-right: 10px;
+      float: left;
 
-      width: 80%; /* Relative width */
-      padding-bottom: 15%; /* Maintain aspect ratio */
-      padding-right: 15%; /* Maintain aspect ratio */
-
+      
       transition: all 0.1s ease; /* Smooth transition */
     }
 
@@ -63,8 +60,9 @@ body {
 
 
 header {
-  display: flex;
+    display: flex;
     background: #e23939;
+    
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 1rem;
