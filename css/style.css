@@ -9,61 +9,56 @@ body {
     /* Flexbox container for the content */
     .content {
       display: flex;
-      align-items: center; /* Vertically center the content */
+      align-items: center;
       justify-content: space-between; /* Create space between written content and image */
     }
 
     /* Style for the written stuff on the left */
     #intro {
-      flex: 1; /* Allow the content to grow and take available space */
+      flex: 2; /* Allow the content to grow and take available space */
       padding: 20px;
-      color: rgb(255, 255, 255);
+      color: rgb(252, 252, 252);
+      font-size: 50px;
+      
+      text-shadow: 
+      -2px -2px 0 #000, /* Top left */
+      2px -2px 0 #000, /* Top right */
+      -2px  2px 0 #000, /* Bottom left */
+      2px  2px 0 #000; /* Bottom right */ 
 
     }
 
-    /* Style for the image on the right */
-    #image {
-      flex: 1; /* Allow the content to grow and take available space */
-      text-align: right; /* Align the image to the right */
-      padding: 20px;
+    #image{
+      flex: 1;
     }
+
+    
+
+    #card{
+      padding: 20px;
+      float: right;
+
+      width: 80%; /* Relative width */
+      padding-bottom: 15%; /* Maintain aspect ratio */
+      padding-right: 15%; /* Maintain aspect ratio */
+
+      transition: all 0.1s ease; /* Smooth transition */
+    }
+
+    #card:hover {
+      transform: scale(1.1); /* Scale on hover */
+    }
+    
+   
+
+    
 
     /* Adjust this as needed */
     #content .image img {
       max-width: 100%;
-      height: auto;
     }
 
 
-  /*--------------------------------------------------------*/
-/* Common styles */
-.container {
-  position: relative;
-  padding: 20px;
-  color: white;
-}
-
-/* Desktop styles */
-@media (min-width: 768px) {
-  .container {
-    background-image: url('desktop-shape.png');
-    background-position: top right;
-    background-size: 200px auto;
-    background-repeat: no-repeat;
-  }
-}
-
-/* Phone styles */
-@media (max-width: 767px) {
-  .container {
-    background-image: url('phone-shape.png');
-    background-position: bottom left;
-    background-size: auto 100px;
-    background-repeat: no-repeat;
-  }
-}
-
-  /*________________________________________________________*/
   
 
 
