@@ -12,7 +12,7 @@ body {
 /* Header styles */
 header {
   background-color: #333;
-  color: #fff;
+  color: #b98d2d;
   padding: 10px;
 }
 
@@ -21,7 +21,7 @@ nav {
 }
 
 nav a {
-  color: #fff;
+  color: #3c9b29c0;
   text-decoration: none;
   margin-right: 20px;
 }
@@ -32,14 +32,14 @@ main {
 }
 
 .hero {
-  background-image: url("images/hero.jpg");
+  background-image: url("night_lateral.jpg");
   background-size: cover;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #ff00005e;
   text-align: center;
 }
 
