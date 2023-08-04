@@ -1,0 +1,112 @@
+:root{
+    --platinum: #e8e8e8;
+    --davys-gray: #494949ff;
+    --white: #ffffffff;
+    --slate-gray: #737d8aff;
+    --rose-ebony: #784d53ff;
+}
+
+
+
+body{
+    /* Body Style */
+    background-color: var(--rose-ebony);
+    color: var(--platinum);
+    font-family: Georgia, serif;
+
+    /* Grid template for style */
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 4fr; 
+    grid-template-rows: 8vh 83vh 5vh; 
+    gap: 1vh 1vw; 
+    grid-template-areas: 
+        "header header"
+        "nav main"
+        "footer footer"; 
+}
+
+header{
+    grid-area: header;
+
+    /* Header Style */
+    background-color: var(--rose-ebony);
+    color: var(--platinum);
+    text-align: center;
+
+    /*this fixes not aligned title*/
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    
+}
+
+nav{
+    grid-area: nav;
+
+    /* Nav Style */
+    background-color: var(--davys-gray);
+    color: var(--platinum);
+    text-align: center;
+    padding: 30px;
+
+
+    /* Grid Nav Rows */
+    display: grid;
+    grid-template-rows: repeat(5, min-content);
+    gap: 15px 0px;
+
+    
+}
+
+nav>a{
+    color: var(--platinum);
+    text-decoration: underline;
+
+    font-size: larger;
+
+}
+
+
+main{
+    grid-area: main;
+
+    /* Main Style */
+    background-color: var(--slate-gray);
+    color: var(--platinum);
+    text-align: center;
+
+
+    overflow-y: auto;
+
+    
+      
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: 0.5px;
+     padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      outline: none;
+    
+}
+
+footer{
+    grid-area: footer;
+
+    /* Footer Style */
+    background-color: var(--yinmn-blue);
+    color: var(--platinum);
+    text-align: center;
+
+    /*this fixes not aligned title*/
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+footer>p{
+    font-size: smaller;
+}
