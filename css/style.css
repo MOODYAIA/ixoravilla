@@ -1,87 +1,60 @@
-/* Reset default margin and padding */
-body, h1, h2, p {
-  margin: 0;
-  padding: 0;
-}
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
 }
 
-/* Header styles */
+    /* Flexbox container for the content */
+    .content {
+      display: flex;
+      align-items: center; /* Vertically center the content */
+      justify-content: space-between; /* Create space between written content and image */
+    }
+
+    /* Style for the written stuff on the left */
+    #intro {
+      flex: 1; /* Allow the content to grow and take available space */
+      padding: 20px;
+      color: rgb(255, 255, 255);
+
+    }
+
+    /* Style for the image on the right */
+    #image {
+      flex: 1; /* Allow the content to grow and take available space */
+      text-align: right; /* Align the image to the right */
+      padding: 20px;
+    }
+
+    /* Adjust this as needed */
+    #content .image img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+
+
 header {
-  background-color: #333;
-  color: #b98d2d;
-  padding: 10px;
+    background: #e23939;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 1rem;
 }
-
-nav {
-  display: flex;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
-
-nav a {
-  color: #3c9b29c0;
-  text-decoration: none;
-  margin-right: 20px;
+.intro {
+    text-align: center;
+    margin-bottom: 2rem;
 }
-
-/* Main styles */
-main {
-  padding: 20px;
-}
-
-
-.hero {
-  /*background-image: url("images/hero.jpg");*/
-  background-size: cover;
-  background-position: center;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /*color: #fff;*/
-  text-align: center;
-}
-
-
-.image-gallery {
-  padding: 20px;
-}
-
-.image-gallery h2 {
-  text-align: center;
-}
-
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
+    display: grid;
 }
-
 .gallery img {
-  width: 100%;
-  height: auto;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.description {
-  margin-top: 20px;
-}
-
-/* Footer styles */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .hero {
-    height: 300px;
-  }
+    max-width: 100%;
+    height: auto;
 }
