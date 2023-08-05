@@ -17,10 +17,10 @@ body {
       flex: 2; /* Allow the content to grow and take available space */
       padding: 20px;
       color: rgb(252, 252, 252);
-      font-size: 35px;
+      font-size: 250%;
       
       text-shadow: 
-      4px  4px 0 #000; /* Bottom right */ 
+      3px  3px 0 #000; /* Bottom right */ 
 
     }
 
@@ -72,6 +72,22 @@ body {
       color: #000;
       text-shadow: 
       2px  2px 0 rgb(179, 124, 7); /* Bottom right */ 
+   }
+
+
+
+
+   @media (max-width: 500px){
+      #intro {
+        flex: 2; /* Allow the content to grow and take available space */
+        padding: 20px;
+        color: rgb(252, 252, 252);
+        font-size: 150%;
+        
+        text-shadow: 
+        4px  4px 0 #000; /* Bottom right */ 
+
+      }
    }
 
 
