@@ -1,6 +1,5 @@
 
 body {
-  
      font-family: Arial, sans-serif;
      margin: 0;
      padding: 0;
@@ -18,7 +17,7 @@ body {
       flex: 2; /* Allow the content to grow and take available space */
       padding: 20px;
       color: rgb(252, 252, 252);
-      font-size: 50px;
+      font-size: 35px;
       
       text-shadow: 
       -2px -2px 0 #000, /* Top left */
@@ -28,58 +27,33 @@ body {
 
     }
 
-    #image{
-      flex: 1;
-    }
 
     
 
     #card{
-      padding-right: 10px;
       float: left;
+      height: auto;
+      width: 70%;
 
+      border: 2px solid #c73838; /* Border style */
+      padding: 0.1%; /* Adding some padding to separate border from image */
       
       transition: all 0.1s ease; /* Smooth transition */
     }
 
     #card:hover {
-      transform: scale(1.1); /* Scale on hover */
+      transform: scale(104%); /* Scale on hover */
     }
     
    
 
-    
-
-    /* Adjust this as needed */
-    #content .image img {
-      max-width: 100%;
-    }
-
-
-  
-
 
 header {
-    display: flex;
-    background: #e23939;
-    
+    background: #ee0404;
+    height: 10%;
+    width: 100%;
     color: rgb(0, 0, 0);
     text-align: center;
-    padding: 1rem;
 }
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-.intro {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-.gallery {
-    display: grid;
-}
-.gallery img {
-    max-width: 100%;
-    height: auto;
-}
+
+
