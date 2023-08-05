@@ -33,7 +33,7 @@ body {
     #card{
       float: left;
       height: auto;
-      width: 70%;
+      width: 50%;
 
       border: 2px solid #c73838; /* Border style */
       padding: 0.1%; /* Adding some padding to separate border from image */
@@ -49,11 +49,13 @@ body {
 
 
 header {
-    background: #ee0404;
+  background: #ee0404;
     height: 10%;
     width: 100%;
     color: rgb(0, 0, 0);
     text-align: center;
 }
+
+
 
 
