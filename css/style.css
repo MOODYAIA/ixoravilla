@@ -1,6 +1,6 @@
 
 body {
-     font-family: Arial, sans-serif;
+     font-family: Georgia, 'Times New Roman', Times, serif;
      margin: 0;
      padding: 0;
 }
@@ -20,10 +20,7 @@ body {
       font-size: 35px;
       
       text-shadow: 
-      -2px -2px 0 #000, /* Top left */
-      2px -2px 0 #000, /* Top right */
-      -2px  2px 0 #000, /* Bottom left */
-      2px  2px 0 #000; /* Bottom right */ 
+      4px  4px 0 #000; /* Bottom right */ 
 
     }
 
@@ -48,25 +45,33 @@ body {
    
 
 
-header {
-  position: relative;
-  height: auto;
-  width: 100%;
-  color: rgb(0, 0, 0);
-  text-align: center;
-}
+    header {
+      
+      font-size: large;
+      position: relative;
+      height: 10%;
+      width: 100%;
+      color: rgb(179, 124, 7); /* Adjust text color and opacity */
+      text-align: center;
+      background: rgba(255, 255, 255, 0); /* Adjust background color and opacity */
+      backdrop-filter: blur(20px); /* Blurring effect */
+      z-index: 1;
 
-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 0, 0, 0.7); /* Transparent red background */
-  backdrop-filter: blur(10px); /* Blurring effect */
-  z-index: -1;
-}
 
+      
+     
+    }
+
+    header h1{
+       text-shadow: 
+       2px  2px 0 #000; /* Bottom right */ 
+    }
+
+    header p{
+      font-size: large;
+      color: #000;
+      text-shadow: 
+      2px  2px 0 rgb(179, 124, 7); /* Bottom right */ 
+   }
 
 
