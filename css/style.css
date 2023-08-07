@@ -52,7 +52,7 @@ footer a:hover {
 
     
 
-    h2{
+   #intro h2{
        /* Allow the content to grow and take available space */
       letter-spacing: 10%;
       color: rgba(8, 196, 48, 0.61);
