@@ -38,14 +38,14 @@ footer a {
 
   color: rgb(12, 20, 136);
   font-weight: bold;
-  transition: all 0.1s ease; /* Smooth transition */
+  transition: all 0.5s ease; /* Smooth transition */
 
   
   margin: 0% 2.5%; /* Adjust spacing between links */
 }
 
 footer a:hover {
-    transform: scale(104%); /* Scale on hover */
+    transform: scale(115%); /* Scale on hover */
 }
 
 
@@ -55,7 +55,7 @@ footer a:hover {
     h2{
        /* Allow the content to grow and take available space */
       letter-spacing: 10%;
-      color: rgb(252, 252, 252);
+      color: rgba(252, 252, 252, 0.61);
       font-size: 250%;
       
       text-shadow: 
@@ -63,11 +63,23 @@ footer a:hover {
 
     }
 
-    #intro{
-      flex: 1;
-      display: flex;
-      align-items: center;
+  
+
+    #intro {
+
+        
+      width: 100%;
+      height: auto;  
+      align-items: left;
       gap: 20px;
+
+      display: flex;
+      flex-direction: column;
+      padding-right: 5%;
+      padding-left: 2.5%;
+      font-size: 110%;
+      text-shadow: 4px  4px 0 #000; /* Bottom right */ 
+
     }
 
 
