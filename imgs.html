@@ -6,11 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fullscreen Image Gallery</title>
   <style>
+
+    header {
+      
+      font-size: large;
+      position: relative;
+      height: 10%;
+      width: 100%;
+      color: rgb(179, 124, 7); /* Adjust text color and opacity */
+      text-align: center;
+      background: rgba(255, 255, 255, 0); /* Adjust background color and opacity */
+      backdrop-filter: blur(20px); /* Blurring effect */
+      z-index: 1;
+ 
+    }
+
+    header h1{
+       text-shadow: 
+       2px  2px 0 #000; /* Bottom right */ 
+    }
+
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: Georgia, 'Times New Roman', Times, serif;
       margin: 0;
       padding: 20px;
+      background-image: url("images/backgroundblurred.jpg");
+      background-position: unset;
     }
+    
     .image-container {
       display: flex;
       flex-wrap: wrap;
@@ -35,7 +59,7 @@
       width: 100%;
       height: 100%;
       
-      background-color: rgba(255, 255, 255, 0.541);
+      background-color: rgba(51, 45, 45, 0.979);
       backdrop-filter: blur(1px); /* Apply a blur effect */
       -webkit-backdrop-filter: blur(1px); /* For Safari */
       justify-content: center;
@@ -71,20 +95,57 @@
   </style>
 </head>
 <body>
-  <h1>Image Gallery</h1>
+
+  <header>
+    <h1>Image Gallery</h1>
+  </header>
   <div class="image-container">
 
+      <img class="image" data-src="VILLA_IXORA_MEDIA/20230717_192022.jpg">
 
-    <img class="image" src="VILLA_IXORA_MEDIA/20230714_150532.jpg"  onclick="openFullscreen('VILLA_IXORA_MEDIA/20230714_150532.jpg')">
+      <img class="image" data-src="VILLA_IXORA_MEDIA/20230714_150532.jpg">
 
-    <img class="image" src="VILLA_IXORA_MEDIA/20230714_150548.jpg"  onclick="openFullscreen('VILLA_IXORA_MEDIA/20230714_150548.jpg')">
+      <img class="image" data-src="VILLA_IXORA_MEDIA/20230714_150548.jpg">
 
-    <img class="image" src="VILLA_IXORA_MEDIA/20230714_150602.jpg"  onclick="openFullscreen('VILLA_IXORA_MEDIA/20230714_150602.jpg')">
-    
-    <img class="image" src="VILLA_IXORA_MEDIA/20230714_150621.jpg"  onclick="openFullscreen('VILLA_IXORA_MEDIA/20230714_150621.jpg')">
+      <img class="image" data-src="VILLA_IXORA_MEDIA/20230714_150602.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/living_room_from_top.jpeg">
+      
+      <img class="image" data-src="VILLA_IXORA_MEDIA/VideoCapture_20230730-151024.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/20230714_150621.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/20230714_144440.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/20230714_144840.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/20230717_161118.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/20230717_190630.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/20230717_191912.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/20230717_191200.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/20230720_160945_resized.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/VideoCapture_20230730-150819.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/VideoCapture_20230730-150827.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/VideoCapture_20230730-150853.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/VideoCapture_20230730-150908.jpg">
+
+      <img class="image" data-src="VILLA_IXORA_MEDIA/VideoCapture_20230730-150930.jpg">
 
 
+
+
+ 
   </div>
+
+
 
 
   <div class="fullscreen-overlay" id="fullscreenOverlay" onclick="closeFullscreen()">
@@ -92,7 +153,11 @@
   </div>
 
 
+  <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+
   <script>
+
+
     function openFullscreen(imagePath) {
       const overlay = document.getElementById('fullscreenOverlay');
       const fullscreenImage = document.getElementById('fullscreenImage');
@@ -106,6 +171,58 @@
       
       overlay.style.display = 'none';
     }
+
+
+    //--------------------------------------------------------
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const imageElements = document.querySelectorAll('.image');
+    let currentImageIndex = -1; // Initialize to an invalid index
+
+    function showFullscreenImage(index) {
+        if (index >= 0 && index < imageElements.length) {
+            currentImageIndex = index;
+            openFullscreen(imageElements[currentImageIndex].getAttribute('data-src'));
+        }
+    }
+
+    const overlay = document.getElementById('fullscreenOverlay');
+    const fullscreenImage = document.getElementById('fullscreenImage');
+
+    const mc = new Hammer(overlay);
+
+
+    mc.on('swipeleft swiperight', function(event) {
+        if (currentImageIndex >= 0) {
+            if (event.type === 'swipeleft') {
+                showFullscreenImage(currentImageIndex + 1);
+            } else if (event.type === 'swiperight') {
+                showFullscreenImage(currentImageIndex - 1);
+            }
+        }
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (overlay.style.display === 'flex') {
+            if (event.key === 'ArrowLeft') {
+                showFullscreenImage(currentImageIndex - 1);
+            } else if (event.key === 'ArrowRight') {
+                showFullscreenImage(currentImageIndex + 1);
+            }
+        }
+    });
+
+    imageElements.forEach(function(imageElement, index) {
+        const imageSrc = imageElement.getAttribute('data-src');
+        imageElement.src = imageSrc;
+
+        imageElement.addEventListener('click', function() {
+            showFullscreenImage(index);
+        });
+    });
+});
+
+    
   </script>
 </body>
 </html>
