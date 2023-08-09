@@ -3,13 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fullscreen Videos</title>
+  <title>Video Gallery</title>
   <style>
+
+    
+    header {
+      
+      font-size: large;
+      position: relative;
+      height: 10%;
+      width: 100%;
+      color: rgb(179, 124, 7); /* Adjust text color and opacity */
+      text-align: center;
+      background: rgba(255, 255, 255, 0); /* Adjust background color and opacity */
+      backdrop-filter: blur(20px); /* Blurring effect */
+      z-index: 1;
+ 
+    }
+
+    header h1{
+       text-shadow: 
+       2px  2px 0 #000; /* Bottom right */ 
+    }
+
     body {
+
+      
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      padding: 20px;
+      background-image: url("images/backgroundblurred.jpg");
+      background-position: unset;
       margin: 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+
       align-items: center;
       min-height: 100vh;
       background-color: #3897f0c9;
@@ -18,12 +46,17 @@
 
     .video-container {
       position: relative;
+
       margin: 10px;
+
+      width: 50%;
+      height: auto;
+
       cursor: pointer;
       overflow: hidden;
       border-radius: 10px;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease-in-out;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.651);
+      transition: transform 0.2s ease-in-out; 
     }
 
     .video-container:hover {
@@ -32,15 +65,44 @@
 
     video {
       display: block;
-      width: 50%;
+      width: 100%;
       height: auto;
     }
+
+  @media (max-width: 900px){
+
+    .video-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        height: auto;
+        width: 100%;
+  }
+
+  
+  .video-container:hover {
+      transform: scale(1.10);
+    }
+
+
+
+}
+
+
   </style>
 </head>
 <body>
-  <div class="video-container" onclick="toggleFullscreen(this)">
-    <video src="VILLA_IXORA_MEDIA/20230717_192103_1_1.mp4" preload="metadata"></video>
-  </div>
+
+    <header>
+        <a href="index.html"> <img id="logo" src="images/logo.jpeg" style="height: auto; width: 200px; padding-top: 80px;" > </a>
+        <h1>Video Gallery</h1>
+    </header>
+
+    <div class="video-container" onclick="toggleFullscreen(this)">
+        <video src="VILLA_IXORA_MEDIA/20230717_192103_1_1.mp4" preload="metadata"></video>
+    </div>
+    
 
   <script>
     let fullscreenElement = null;
