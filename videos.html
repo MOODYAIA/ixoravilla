@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fullscreen Videos</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #3897f0c9;
+      font-family: Arial, sans-serif;
+    }
+
+    .video-container {
+      position: relative;
+      margin: 10px;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .video-container:hover {
+      transform: scale(1.05);
+    }
+
+    video {
+      display: block;
+      width: 50%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container" onclick="toggleFullscreen(this)">
+    <video src="VILLA_IXORA_MEDIA/20230717_192103_1_1.mp4" preload="metadata"></video>
+  </div>
+
+  <script>
+    let fullscreenElement = null;
+
+    function toggleFullscreen(container) {
+      const video = container.querySelector('video');
+      if (!video) return;
+
+      if (!document.fullscreenElement) {
+        fullscreenElement = video;
+        video.requestFullscreen().catch(err => {
+          console.log(`Fullscreen error: ${err.message}`);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+      if (!document.fullscreenElement) {
+        if (fullscreenElement) {
+          fullscreenElement.pause();
+          fullscreenElement.currentTime = 0;
+          fullscreenElement = null;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
