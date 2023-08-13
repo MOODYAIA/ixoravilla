@@ -116,15 +116,16 @@ footer a:hover {
 
 
     header h1{
+      font-size: 250%;
        text-shadow: 
        2px  2px 0 #000; /* Bottom right */ 
     }
 
     header p{
-      font-size: large;
-      color: #000;
+      font-size: 150%;
+      color: rgb(179, 125, 7);
       text-shadow: 
-      2px  2px 0 rgb(179, 124, 7); /* Bottom right */ 
+      2px  2px 0 rgb(0, 0, 0); /* Bottom right */ 
    }
 
 
