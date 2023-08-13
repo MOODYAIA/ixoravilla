@@ -8,17 +8,15 @@ body {
     /* Flexbox container for the content */
     .content {
       display: flex;
-      margin-bottom: 30%;
       align-items: center;
-      justify-content: space-between; /* Create space between written content and image */
       padding: 0.5%;
+      padding-bottom: 40%;
     }
 
 
 footer {
   position: fixed;
   bottom: 0;
-  justify-content: space-between;
   width: 100%;
   height: 100px;
   display: flex;
@@ -54,7 +52,6 @@ footer a:hover {
 
    #intro h2{
        /* Allow the content to grow and take available space */
-      letter-spacing: 10%;
       color: rgb(250, 250, 250);
       font-size: 250%;
       
@@ -70,7 +67,7 @@ footer a:hover {
         
       width: 100%;
       height: auto;  
-      align-items: left;
+      align-items: center;
       gap: 20px;
 
       display: flex;
@@ -114,10 +111,9 @@ footer a:hover {
       backdrop-filter: blur(20px); /* Blurring effect */
       z-index: 1;
 
-
-      
      
     }
+
 
     header h1{
        text-shadow: 
@@ -151,10 +147,6 @@ footer a:hover {
 
       }
 
-      header{
-        width: 100%;
-        height: auto;
-      }
 
 
       footer{
