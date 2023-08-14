@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attractions</title>
+  <style>
+
+    header {
+      
+      font-size: large;
+      position: relative;
+      height: 10%;
+      width: 100%;
+      color: rgb(179, 124, 7);
+      text-align: center;
+      background: rgba(255, 255, 255, 0); 
+      backdrop-filter: blur(20px); 
+      z-index: 1;
+ 
+    }
+
+    .list_title{
+        font-size: 290%;
+      color: rgb(179, 124, 7);
+    }
+
+    header h1{
+       text-shadow: 
+       2px  2px 0 #000; /* Bottom right */ 
+    }
+
+
+
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("images/backgroundblurred.jpg");
+      background-position: unset;
+      background-attachment:fixed ;
+
+    }
+
+    #list_nearest_places{
+            display: flex;
+            overflow: scroll;
+    }
+
+
+    .list_element {
+            font-size: 18px;
+            position: relative;
+            background: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(80px);
+            border-radius: 25px;
+            margin-bottom: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .inner_content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+
+        
+        .inner_content div {
+            width: 48%;
+            padding: 10px;
+        }
+
+        .inner_text{
+          color: rgb(245, 245, 245);
+          text-shadow: 2px 2px 0 #000000;
+          font-size: 150%;
+        }
+
+        .mini_title{
+          color: rgb(16, 117, 3);
+          text-shadow: 2px 2px 0 #000000;
+          font-size: larger;
+        }
+    
+
+        .list_title{
+          padding-left: 40px;
+        }
+
+          #content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
+
+
+        .location{
+            height: auto;
+            width: 70%;
+            padding: 50px;
+
+        }
+    
+
+    
+   
+
+
+    @media (max-width: 1050px){
+
+      
+      .inner_content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+      }
+
+      .inner_content div{
+        
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+      }
+
+      .inner_text{
+        font-size: 140%;
+      }
+      .location{
+        width: 100%;
+        height: auto;
+        border: 0;
+      }
+
+
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html"> <img id="logo" src="images/logo.jpeg" style="height: auto; width: 200px; padding-top: 80px;" > </a>
+    <h1>Attractions</h1>
+  </header>
+
+  <p class="list_title"> tours, and activities nearby</p>
+
+  <div id="content">
+
+        <div class="list_element">
+            <div class="inner_content">
+
+              <div class="inner_text">
+                <b><p class="mini_title">MOUNT LAVINIA BEACH</p></b>
+                <p>
+                  __ 19 km __<br>
+                  a main sea-bathing spot in the island. Here, depending on season,<br>
+                  the waves can be swimmable and it’s host to some amazing sunsets.<br>
+                  It also recides in a city steeped with history.
+                </p>
+
+              </div>
+
+              <div> 
+                <iframe class="location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31690.82238096258!2d79.84142175599573!3d6.8482
+                4356159123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b1097b2d5a1%3A0x6d72bfb938a8f677!2sSpiaggia%20Monte
+                %20Lavinia!5e0!3m2!1sit!2sit!4v1692008060655!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+
+            </div>
+        </div>
+
+
+        <div class="list_element">
+          <div class="inner_content">
+
+            <div class="inner_text">
+              <b><p class="mini_title">ZOO DEHIWALA</p></b>
+                <p>
+                  __ 17 km __<br>
+                 a flourishing landscape that is housing over 2,500 splendid animals,
+                  birds, butterflies, reptiles, amphibians and much more.<br>
+                 The distinct species does not limit to the ones found in Sri Lanka
+                 but there are animals from various other countries too.
+              
+                </p>
+            </div>
+
+            <div> 
+              <iframe class="location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.280156636708!2d79.87182757576272!
+              3d6.8569864191965815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25baace050325%3A0xfd90f5bffd93f59f!2sGia
+              rdino%20zoologico%20di%20Dehiwala!5e0!3m2!1sit!2sit!4v1692008180896!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+          </div>
+        </div>
+
+
+      <div class="list_element">
+        <div class="inner_content">
+
+          <div class="inner_text">
+            <b><p class="mini_title">GALLE FACE BEACH</p></b>
+            <p>
+              __ 24 km __<br>
+              a large open space between the Galle Road and the Indian 
+              Ocean for people to come and have fun under the open skies.<br>
+              even during the monsoon months of May to September, there is much to see and do here.
+
+            </p>
+          </div>
+
+          <div> 
+            <iframe class="location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8232.426441299252!2d79.83916317774285!3d6.924226119391681!
+            2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593bcace8c17%3A0xe6b567a8d83fb
+            7ce!2sGalle%20Face%20Beach!5e0!3m2!1sit!2sit!4v1692008698775!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="list_element">
+        <div class="inner_content">
+
+          <div class="inner_text">
+            <b><p class="mini_title">GO KARTING CIRCUIT</p></b>
+            <p>
+              __ 11 km __<br>
+              exciting and thrilling karting experience on a brilliant semi-professional outdoor track<br>
+
+            </p>
+          </div>
+
+          <div> 
+            <iframe class="location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253544.6204674802!2d79.97541525561515!3d6.814209512777039!2m3!1f0!2f0!3f0
+            !3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24eca36ada1d9%3A0x7e0935b0ca56d262!2sSri%20Lanka%20Karting%20Circuit%2C%20Bandaragama!5e0!3m2!1sit!2sit!4v1692008361300!5m2!1sit!2sit"
+             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+        </div>
+      </div>
+
+
+    <div class="list_element">
+      <div class="inner_content">
+
+        <div class="inner_text">
+          <b><p class="mini_title">UDAWALAWE NATIONAL PARK</p></b>
+          <p>
+            __ 147 km __<br>
+            this National Park is the island’s 6th-largest reserve;<br>
+            Spot animals such as elephant, buffalo, deer, crocodiles, leopards, and exotic birdlife among the park’s 119 square miles (308 square kilometers).
+
+          </p>
+        </div>
+
+        <div> 
+          <iframe class="location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31716.910512315055!2d80.83163130499547!3d6.4436
+          07231761276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae408ff88887e79%3A0xaf12e79ffbd980d7!2sparco%20nazionale%20di%20Uda%20Walawe!5e0!3m2!1sit!2sit!4v1692008452684!5m2!1sit!2sit"
+           width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="list_element">
+      <div class="inner_content">
+
+        <div class="inner_text">
+          <b><p class="mini_title">BELLANWILA RAJA MAHA VIHARAYA</p></b>
+          <p>
+            __ 15 km __<br>
+            This temple is considered so sacred that there is a long cherished belief that a child who treads the ground under the shade of its scared Bodhi-tree will never fail in life.
+          </p>
+        </div>
+
+        <div> 
+          <iframe class="location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.3708544017873!2d79.88512238935573!3d6.
+          846068575495575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25aee1916e3ef%3A0xdb50ff12ef434d19!2sBellanwila%20Raja%20Maha%20Viharaya!5e0!3m2!1sit!2sit!4v1692008620310!5m2!1sit!2sit"
+           width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+
+</body>
+</html>
+
+ 
