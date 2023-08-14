@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
+
+    <!DOCTYPE html>
+<html>
+<head> 
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Video Gallery</title>
+
   <style>
 
-    
     header {
       
       font-size: large;
@@ -27,111 +30,93 @@
     }
 
     body {
-
-      
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      padding: 20px;
-      background-image: url("images/backgroundblurred.jpg");
-      background-position: unset;
       margin: 0;
       display: flex;
       flex-wrap: wrap;
+      overflow-x: scroll;
       justify-content: center;
-
       align-items: center;
-      min-height: 100vh;
-      background-color: #3897f0c9;
-      font-family: Arial, sans-serif;
+      height: 100vh;
+      background-color: #000;
     }
-
     .video-container {
-      position: relative;
-
+      flex-direction: column;
       margin: 10px;
-
-      width: 50%;
       height: auto;
-
+      width: 40%;
+      position: relative;
       cursor: pointer;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.651);
-      transition: transform 0.2s ease-in-out; 
+      flex: 0 0 auto;
     }
-
-    .video-container:hover {
-      transform: scale(1.05);
-    }
-
     video {
-      display: block;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    img{
       width: 100%;
       height: auto;
     }
 
-  @media (max-width: 900px){
 
-    .video-container{
-        display: flex;
+    @media (max-width: 1050px){
+
+      body{
+        flex-wrap: nowrap;
         flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .video-container{
+        width: 80%;
         height: auto;
-        width: 100%;
-  }
+      }
 
-  
-  .video-container:hover {
-      transform: scale(1.10);
+      img{
+      width: 80%;
+      height: auto;
+     }
+
     }
-
-
-
-}
 
 
   </style>
 </head>
 <body>
+  <!-- Image containers -->
+  <div class="video-container" onclick="toggleFullScreen('VILLA_IXORA_MEDIA/1.mp4')">
+    <img src="images/logo.jpeg" alt="preview">
+  </div>
+  <div class="video-container" onclick="toggleFullScreen('VILLA_IXORA_MEDIA/2.mp4')">
+    <img src="images/logo.jpeg" alt="preview">
+  </div>
 
-    <header>
-        <a href="index.html"> <img id="logo" src="images/logo.jpeg" style="height: auto; width: 200px; padding-top: 80px;" > </a>
-        <h1>Video Gallery</h1>
-    </header>
-
-    <div class="video-container" onclick="toggleFullscreen(this)">
-        <video src="VILLA_IXORA_MEDIA/20230717_192103_1_1.mp4" preload="metadata"></video>
-    </div>
-    
+  
+  <div id="fullScreenVideoContainer" style="display: none;"></div>
 
   <script>
-    let fullscreenElement = null;
+    // Function to toggle full-screen video display
+    function toggleFullScreen(videoSrc) {
+      const fullScreenVideoContainer = document.getElementById('fullScreenVideoContainer');
+      fullScreenVideoContainer.innerHTML = `
+        <video id="fullScreenVideo" controls>
+          <source src="${videoSrc}" type="video/mp4">
+        </video>
+      `;
+      fullScreenVideoContainer.style.display = 'block';
 
-    function toggleFullscreen(container) {
-      const video = container.querySelector('video');
-      if (!video) return;
+      // Play the video
+      const fullScreenVideo = document.getElementById('fullScreenVideo');
+      fullScreenVideo.play();
 
-      if (!document.fullscreenElement) {
-        fullscreenElement = video;
-        video.requestFullscreen().catch(err => {
-          console.log(`Fullscreen error: ${err.message}`);
-        });
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-      }
+      // Close full-screen video when clicked
+      fullScreenVideo.addEventListener('click', () => {
+        fullScreenVideoContainer.style.display = 'none';
+        fullScreenVideo.pause();
+      });
     }
-
-    document.addEventListener('fullscreenchange', () => {
-      if (!document.fullscreenElement) {
-        if (fullscreenElement) {
-          fullscreenElement.pause();
-          fullscreenElement.currentTime = 0;
-          fullscreenElement = null;
-        }
-      }
-    });
   </script>
 </body>
+
+
 </html>
