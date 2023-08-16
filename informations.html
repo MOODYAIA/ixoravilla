@@ -21,9 +21,12 @@
  
     }
 
-    .list_title{
-        font-size: 290%;
-      color: rgb(179, 124, 7);
+    #pre_info{
+        font-size: 250%;
+      color: rgb(255, 255, 255);
+      
+      text-shadow: 
+       2px  2px 0 #000; /* Bottom right */ 
     }
 
     header h1{
@@ -43,10 +46,6 @@
 
     }
 
-    #list_nearest_places{
-            display: flex;
-            overflow: scroll;
-    }
 
 
     .list_element {
@@ -60,23 +59,26 @@
             margin-right: 10px;
         }
 
-        .inner_content {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
 
-
-        
-        .inner_content div {
-            width: 48%;
-            padding: 10px;
-        }
 
         .inner_text{
           color: rgb(245, 245, 245);
-          text-shadow: 2px 2px 0 #000000;
           font-size: 150%;
+          padding:10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .inner_text ul li{
+          text-align: center;
+
+          margin-bottom: 10%;
+          padding: 10px 0 10px;
+          
+          background-color: rgba(0, 0, 0, 0.315);
+          border-radius: 15px;
+
         }
 
         .mini_title{
@@ -84,10 +86,14 @@
           text-shadow: 2px 2px 0 #000000;
           font-size: larger;
         }
+
+        .title_container{
+          text-align: center;
+        }
     
 
-        .list_title{
-          padding-left: 40px;
+        #pre_info{
+          padding: 20px;
         }
 
           #content {
@@ -99,11 +105,16 @@
         }
 
 
-        #card{
+        #contact_card{
             height: auto;
-            width: 70%;
-            padding: 50px;
+            max-width: 400px;
+            padding: 10px;
 
+        }
+
+        .phone-number{
+          color:rgb(179, 124, 7);
+          text-shadow: 2px 2px 0 #000000;
         }
     
 
@@ -111,33 +122,25 @@
    
 
 
-    @media (max-width: 1050px){
+    @media (max-width: 850px){
 
       
-      .inner_content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-      }
-
-      .inner_content div{
-        
+      .inner_text {
         display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-      }
-
-      .inner_text{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         font-size: 140%;
       }
-      .location{
-        width: 100%;
+
+
+      
+      #contact_card{
         height: auto;
-        border: 0;
+        max-width: 200px;
+        padding-left: 10px;
       }
+    
 
 
     }
@@ -153,35 +156,44 @@
     <h1>Informations</h1>
   </header>
 
-  <p class="list_title">-----------</p>
+  <p id="pre_info">medical centers, restaurants,<br> supermarkets and banks under 500 meters</p>
 
   <div id="content">
 
-        <div class="list_element">
-            <div class="inner_content">
+    <div class="list_element">
 
-              <div class="inner_text">
-                <b><p class="mini_title">contacts</p></b>
-                <ul>
-                    <li>contact 1</li>
-                    <li>contact 2</li>
-                    <li>contact 3</li>
-                </ul>
+      <div class="title_container">
+        <b><p class="mini_title">CONTACTS</p></b>
+      </div>
 
-              </div>
 
-              <div> 
-                <a href="images/contact.jpeg"><img id="card" src="images/contact.jpeg"  ></a>
-              </div>
+      <div class="inner_text">
 
-            </div>
+        <ul>
+            <li>
+              <b>- Raji Asadduma Gedara -</b> <br> 
+              <b><a class="phone-number" href="tel:+94769733535" onclick="return false;" oncontextmenu="return false;" > +94 76 973 3535 (Sri Lanka)</a></b>
+            </li>
+
+            <li>
+              <b>- Weerarathna Shaloni -</b> <br> 
+              <b><a class="phone-number" href="tel:+393289816326" onclick="return false;" oncontextmenu="return false;" > +39 328 981 6326 (Italy)</a></b>
+            </li>
+            
+            <li>
+              <b>- Muditha M. Asadduma Gedara -</b> <br> 
+              <b><a class="phone-number" href="tel:+393930740607" onclick="return false;" oncontextmenu="return false;" > +39 393 074 0607 (Italy)</a></b>
+            </li>
+        </ul>
+
+        <div> 
+          <a  href="images/contact.jpeg"><img id="contact_card"src="images/contact.jpeg"  ></a>
         </div>
 
+      </div>
 
-
-
-
-
+     
+    </div>
   </div>
 
 
