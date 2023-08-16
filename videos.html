@@ -1,13 +1,10 @@
 
-
-    <!DOCTYPE html>
-<html>
-<head> 
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Gallery</title>
-
+  <title>Informations</title>
   <style>
 
     header {
@@ -16,66 +13,83 @@
       position: relative;
       height: 10%;
       width: 100%;
-      color: rgb(179, 124, 7); /* Adjust text color and opacity */
+      color: rgb(179, 124, 7);
       text-align: center;
-      background: rgba(255, 255, 255, 0); /* Adjust background color and opacity */
-      backdrop-filter: blur(20px); /* Blurring effect */
+      background: rgba(255, 255, 255, 0); 
+      backdrop-filter: blur(20px); 
       z-index: 1;
  
     }
+
 
     header h1{
        text-shadow: 
        2px  2px 0 #000; /* Bottom right */ 
     }
 
+
+
     body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
       margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      overflow-x: scroll;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #000;
-    }
-    .video-container {
-      flex-direction: column;
-      margin: 10px;
-      height: auto;
-      width: 40%;
-      position: relative;
-      cursor: pointer;
-      flex: 0 0 auto;
-    }
-    video {
-      max-width: 100%;
-      max-height: 100%;
-    }
+      padding: 0;
+      background-image: url("images/backgroundblurred.jpg");
+      background-position: unset;
+      background-attachment:fixed ;
 
-    img{
-      width: 100%;
-      height: auto;
+
     }
 
 
-    @media (max-width: 1050px){
 
-      body{
-        flex-wrap: nowrap;
-        flex-direction: column;
-        justify-content: flex-start;
+        
+  
+
+  
+
+      #video_container {
+        position: relative; /* Create a positioning context */
+        display: flex;
+        justify-content: center;
+        width: 100%; /* Use 100% width of the container */
+        height: 0; 
+        padding-bottom: 56.25%;
       }
 
-      .video-container{
-        width: 80%;
-        height: auto;
+      #video_container .video {
+        
+        position: absolute; 
+        width: 90%;
+        height: 90%;
+        transition: all 0.1s ease; /* Smooth transition */
+    }
+
+    #video_container .video:hover {
+      transform: scale(104%); /* Scale on hover */
+    }
+
+
+
+     
+    @media (max-width: 550px){
+
+          #video_container .video {
+        
+        position: absolute; 
+        width: 90%;
+        height: 150%;
       }
 
-      img{
-      width: 80%;
-      height: auto;
-     }
+      #video_container {
+        position: relative; /* Create a positioning context */
+        display: flex;
+        justify-content: center;
+        width: 100%; /* Use 100% width of the container */
+        height: 200px; 
+        padding-bottom: 56.25%;
+      }
+
+
 
     }
 
@@ -83,40 +97,20 @@
   </style>
 </head>
 <body>
-  <!-- Image containers -->
-  <div class="video-container" onclick="toggleFullScreen('VILLA_IXORA_MEDIA/1.mp4')">
-    <img src="images/logo.jpeg" alt="preview">
-  </div>
-  <div class="video-container" onclick="toggleFullScreen('VILLA_IXORA_MEDIA/2.mp4')">
-    <img src="images/logo.jpeg" alt="preview">
-  </div>
 
-  
-  <div id="fullScreenVideoContainer" style="display: none;"></div>
+  <header>
+    <a href="index.html"> <img id="logo" src="images/logo.jpeg" style="height: auto; width: 200px; padding-top: 80px;" > </a>
+    <h1>Videos</h1>
+  </header>
 
-  <script>
-    // Function to toggle full-screen video display
-    function toggleFullScreen(videoSrc) {
-      const fullScreenVideoContainer = document.getElementById('fullScreenVideoContainer');
-      fullScreenVideoContainer.innerHTML = `
-        <video id="fullScreenVideo" controls>
-          <source src="${videoSrc}" type="video/mp4">
-        </video>
-      `;
-      fullScreenVideoContainer.style.display = 'block';
+    <div id="video_container">
+      <iframe class="video" src="https://www.youtube.com/embed/MNubjD2kgpY" 
+      title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+      encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
 
-      // Play the video
-      const fullScreenVideo = document.getElementById('fullScreenVideo');
-      fullScreenVideo.play();
 
-      // Close full-screen video when clicked
-      fullScreenVideo.addEventListener('click', () => {
-        fullScreenVideoContainer.style.display = 'none';
-        fullScreenVideo.pause();
-      });
-    }
-  </script>
 </body>
-
-
 </html>
+
+ 
