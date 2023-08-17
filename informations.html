@@ -102,20 +102,35 @@
             justify-content: space-evenly;
             flex-direction: column;
             padding-bottom: 20px;
-        }
+          }
 
 
         #contact_card{
-            height: auto;
-            max-width: 400px;
-            padding: 10px;
+          height: auto;
+          max-width: 400px;
+          padding: 10px;
+          transition: all 0.3s ease; /* Smooth transition */
+    }
 
-        }
+      #contact_card:hover {
+        transform: scale(120%); /* Scale on hover */
+      }
+        
 
         .phone-number{
           color:rgb(0, 180, 9);
           text-shadow: 2px 2px 0 #000000;
+          
         }
+
+        .inner_text ul li{
+          transition: all 0.3s ease; /* Smooth transition */
+        }
+
+        .inner_text ul li:hover {
+        transform: scale(110%)
+      }
+          
     
 
     
