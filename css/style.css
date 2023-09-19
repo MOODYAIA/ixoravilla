@@ -73,7 +73,6 @@ footer a:hover {
 
       display: flex;
       flex-direction: column;
-      padding-right: 5%;
       padding-left: 2.5%;
       font-size: 110%;
       text-shadow: 4px  4px 0 #000; /* Bottom right */ 
@@ -141,7 +140,6 @@ footer a:hover {
 
         display: flex;
         flex-direction: column;
-        padding-right: 5%;
         color: rgb(252, 252, 252);
         font-size: 110%;
         text-shadow: 
